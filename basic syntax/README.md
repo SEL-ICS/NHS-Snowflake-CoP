@@ -1,0 +1,1 @@
+This section contains helpful scripts demonstrating basic SQL statements. Use these examples as a reference for common SQL operations and syntax.
