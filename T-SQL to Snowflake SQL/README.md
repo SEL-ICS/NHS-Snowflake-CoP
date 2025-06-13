@@ -1,0 +1,1 @@
+### This section is for tips on how to swich from using T-SQL to Snowflake
