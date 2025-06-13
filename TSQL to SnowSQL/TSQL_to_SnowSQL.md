@@ -164,7 +164,7 @@ and ADD_MONTHS() will take into account end of months i.e. ADD_MONTHS('2024-02-2
     ```
     2025-01-31
     ```
-    This can be combined with CURRENT_DATE() to return the latest end of of month position
+    This can be combined with CURRENT_DATE() to return the latest end of month position
 
     ```sql
     SELECT ADD_MONTHS(LAST_DAY(CURRENT_DATE()), -1) -- Takes the last day of February (28th), selects the previous end of month date (31st Jan)
@@ -175,12 +175,12 @@ and ADD_MONTHS() will take into account end of months i.e. ADD_MONTHS('2024-02-2
     ```
 
 #### Temporary Table Syntax
-* SnowSQL no longer uses the # (#temp_table) and instead is written similar to normal tables, instead defining this in a CREATE OR REPLACE TEMPORARY TABLE statement in the below statement. It will still require a Database and Schema be defined defined
+* SnowSQL no longer uses the # (#temp_table) and instead is written similar to normal tables, instead defining this in a CREATE OR REPLACE TEMPORARY TABLE statement in the below statement. It will still require a Database and Schema be defined.
     ```sql
     USING 
         DATABASE_NAME
         ,SCHEMA_NAME
-    CREATE OR REPLACE TEMPORARY TABLE temp_table -- identical syntaxt to normal table, with added TEMPORARY
+    CREATE OR REPLACE TEMPORARY TABLE temp_table -- identical syntax to normal table, with added TEMPORARY
     ```
     Due to speed of Snowflake it is however recommended to use CTEs in place of temporary tables in cases of smaller tables. CTEs are defined in the same way as TSQL.
 
