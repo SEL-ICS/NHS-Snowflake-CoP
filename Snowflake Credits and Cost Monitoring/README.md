@@ -1,8 +1,10 @@
 ## 📊 Credit Consumption
 
-Snowflake uses a credit-based system to measure and bill for the resources consumed. Credits are incurred from the following:
+Snowflake uses a credit-based system to measure and bill for the resources consumed.
 
 Official Snowflake documentation to understand overall costs can be found here: [Snowflake Documentation](https://docs.snowflake.com/en/user-guide/cost-understanding-overall).
+
+Credits are incurred from the following:
 
 ### Compute
 
