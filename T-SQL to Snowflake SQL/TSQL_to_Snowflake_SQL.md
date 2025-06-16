@@ -199,3 +199,51 @@ For example, all the below would be of equivalent size unless larger text was in
     );
     ```
 
+#### Scheduled Tasks
+* In TSQL/SSMS to schedule a "Job" you would set up a SQL server agent job through the SSMS interface in order to schedule the routine running of a script or procedure.
+* In Snowflake this can be done in a more straight forward way with Tasks.
+
+* For example - to schedule a monthly refresh through a task, this can be done as follows;
+
+    ```sql
+    CREATE OR REPLACE TASK DATABASE.SCHEMA.TASK_NAME
+        WAREHOUSE = WAREHOUSE_NAME -- Warehouse used
+        SCHEDULE = 'USING CRON 0 7 * * * Europe/London' -- Specifies the frequency of the task (in this case, every day at 7am)
+        USER_TASK_TIMEOUT_MS = 1800000 -- timeout in ms - for example 1800000 translates to 30 mintes.
+        COMMENT = 'Comment describing the Task.' -- or any other specific comment to apply to this task
+    as -- ENTER YOUR SCRIPT HERE
+    ```
+   
+
+* As an example, see below which runs a monthly stored procedure on the 3rd day of every month.
+
+    ```sql 
+    CREATE OR REPLACE TASK DATA_LAB_SEL.FINAL.TASK_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES
+        WAREHOUSE = SEL_ANALYTICS_XS
+        SCHEDULE = 'USING CRON 0 7 3 * * Europe/London' -- Runs at 07:00 on the 3rd day of each month (not limited to working days)
+        USER_TASK_TIMEOUT_MS = 1800000
+        COMMENT = 'Task to run the Discovery SEL Registered Patients Monthly and Yearly table imports on the 3rd day of each month'
+    as CALL STAGING.SP_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES();
+    ```
+
+* You can also "chain" tasks together. Instead of specifying a schedule, the last variable AFTER you can specify the task that this one should follow as soon as the previous task has finished excecuting (unless the previous task fails).
+
+    ```sql
+    CREATE OR REPLACE TASK DATA_LAB_SEL.FINAL.TASK_UPDATE_PC_LTC_OBSERVATION_MEDICATION
+        WAREHOUSE = SEL_ANALYTICS_XS
+        USER_TASK_TIMEOUT_MS = 1800000
+        COMMENT = 'Task to run the LTC Observation and Medication staging table imports on the 3rd day of each month'
+        AFTER FINAL.TASK_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES -- runs as soon as TASK_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES has finished
+    as CALL STAGING.SP_UPDATE_PC_LTC_OBSERVATION_MEDICATION();
+    ```
+
+* See some further examples of different schedules below
+    ```sql
+    SCHEDULE = 'USING CRON 0 * * * * Europe/London' -- Runs every hour on the hour
+    SCHEDULE = 'USING CRON 0 7 * * * Europe/London' -- Runs at 07:00 every day
+    SCHEDULE = 'USING CRON 0 7 3 * * Europe/London' -- Runs at 07:00 on the 3rd day of each month
+    SCHEDULE = 'USING CRON 0 9 * * 1 Europe/London' -- Runs at 9am every Monday
+    SCHEDULE = 'USING CRON 0 10 * * 1,3,5 Europe/London' -- Runs Mon, Wed, Fri at 10:00
+    SCHEDULE = 'USING CRON 0 6 1 1 * Europe/London' -- Runs at 06:00 on Jan 1st
+
+    ```
