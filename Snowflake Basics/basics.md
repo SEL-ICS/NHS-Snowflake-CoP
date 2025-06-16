@@ -11,3 +11,4 @@ Be aware wrapping a column name in double-quotes (") retains case sensitivity. S
   * FIELD_NAME_1+1 will not work.
   * "FIELD NAME" works only enclosed with "
   * "123_FIELD NAME" works only enclosed with "
+  * another bullet point
