@@ -14,8 +14,7 @@
 | Command / Feature         | What It Does |
 |---------------------------|--------------|
 | 🔁 **CREATE OR REPLACE**  | Replaces objects (`TABLE`, `VIEW`, `PROC`, etc.) without a `DROP`.
-| 🧮 **GROUP BY ALL**       | Automatically groups by all non-aggregated columns in `SELECT`, saving time and avoiding syntax errors. |
-| 🧩 **CTEs Over Temp Tables** | Snowflake’s engine is optimized for Common Table Expressions (CTEs), making them faster and cleaner than temp tables. |
+| 🧮 **GROUP BY ALL**       | Automatically groups by all non-aggregated columns in `SELECT`, saving time and avoiding syntax errors.
 | 🔍 **QUALIFY Clause**     | Filters window function results (`RANK()`, `ROW_NUMBER()`, etc.) directly in the query—no subqueries needed. |
 
 ---
