@@ -9,6 +9,7 @@ This guide outlines the standards for contributing Markdown documentation to the
   - [📃 File naming conventions](#%F0%9F%93%83-file-naming-conventions)
   - [📁 Folder structure](#%F0%9F%93%81-folder-structure)
   - [⬇️ Markdown formatting and linting](#%E2%AC%87%EF%B8%8F-markdown-formatting-and-linting)
+    - [Guide](#guide)
     - [Titles](#titles)
     - [Bullet points](#bullet-points)
     - [Code](#code)
@@ -18,7 +19,6 @@ This guide outlines the standards for contributing Markdown documentation to the
   - [🛡️ Badges and Shields](#%F0%9F%9B%A1%EF%B8%8F-badges-and-shields)
   - [🔗 Linking](#%F0%9F%94%97-linking)
   - [🔍 Review and Approval](#%F0%9F%94%8D-review-and-approval)
-
 
 ## 📃 File naming conventions
 
@@ -38,11 +38,14 @@ All Content shall be organised into the agreed folders:
 
 ## ⬇️ Markdown formatting and linting
 
+### Guide
+
+Please review and follow the markdown guide here: https://learn.microsoft.com/en-us/contribute/content/markdown-reference
+
 ### Titles
 
 - Use `#` for titles, `##` for subtitles, etc.
 - Titles should be written in Sentence casing, i.e. subsequent words that are not proper nouns should not be capitalised.
-
 
 ### Bullet points
 
@@ -69,6 +72,7 @@ Use `1` for all ordered bullet points. Do **not** use `2.`, `3.` etc. for the su
 > ```
 
 ## 🔊 Tone and Style
+
 - Write in a clear, concise, and friendly tone.
 - Use active voice where possible.
 - Avoid jargon unless explained.
