@@ -68,7 +68,7 @@ Use meaningful names for objects. The object name should consist of a series of 
 | 2         | Category          | Used to distinguish specific categories                                                             | `LOOKUP`, `REGISTER`, `PROCESSING`    | ✅ Where applicable        |
 | 3         | Care Setting      | Name/abbreviation of the care setting                                                               | `ACUTE`, `COMM`, `MH`, `PC`           | ✅ Where applicable        |
 | 4         | Data Source       | Name/abbreviation of the data source or component                                                   | `SUS`, `SLAM`, `ECDS`, `SUS_OP`       | ✅ Where applicable        |
-| 5         | Specific Name     | Concise name of the object                                                                          | `UPDATE`,             | ✅ Mandatory               |
+| 5         | Specific Name     | Concise name of the object                                                                          | `UPDATE`            | ✅ Mandatory               |
 | 6         | Financial Year    | If the object is specific to one financial year                                                     | `202223`, `202324`, `202425`          | ✅ Where applicable        |
 
 ---
