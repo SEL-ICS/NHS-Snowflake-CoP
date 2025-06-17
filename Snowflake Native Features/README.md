@@ -22,5 +22,7 @@ Here’s what this section covers:
 - 📦 **Data Object Management**: Explore powerful features like zero-copy cloning to manage environments without duplicating data.  
 
 
+
 ---
 
+We hope these tips help you get the most out of Snowsight. If you have suggestions or additional tips, feel free to contribute or open a discussion!
