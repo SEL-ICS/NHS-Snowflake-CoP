@@ -1,14 +1,13 @@
-# SEL ICB Patient Registers
-
-- [SEL ICB Patient Registers](#sel-icb-patient-registers)
-	- [Intro](#intro)
-	- [1. Building Patient Cohort](#1-building-patient-cohort)
-	- [2. Scheduled Procedures](#2-scheduled-procedures)
-	- [3. Scheduled Task](#3-scheduled-task)
-	- [4. LTC Register Staging](#4-ltc-register-staging)
-	- [5. LTC Register Function](#5-ltc-register-function)
-	- [6. LTC Scheduled tasks](#6-ltc-scheduled-tasks)
-	- [7. SEL Register \& LTC View](#7-sel-register--ltc-view)
+ ## SEL ICB Patient Registers
+<!-- no toc -->
+- [Intro](#intro)
+- [1. Initialising Patient Register](#1-initialising-patient-register)
+- [2. Register Stored Procedures](#2-register-stored-procedures)
+- [3. Register Scheduled Task](#3-register-scheduled-task)
+- [4. LTC Register Staging](#4-ltc-register-staging)
+- [5. LTC Register Function](#5-ltc-register-function)
+- [6. LTC Scheduled tasks](#6-ltc-scheduled-tasks)
+- [7. SEL Register \& LTC View](#7-sel-register--ltc-view)
 
 
 ## Intro 
@@ -33,7 +32,7 @@ In SEL, we use build our Patient GP register through the Primary Care data (curr
 
 See below steps and scripts we've set up in Snowflake for creating these
 
-## 1. Building Patient Cohort
+## 1. Initialising Patient Register
 
 We currently use a script that is written as a UDF (user defined function) in snowflake, that given a date parameter will return the patients registered to SEL practice at that date. It is also given a "report type" parameter which when "direct care" is provided to this, will include Type 1 opt out patients, otherwise these patients will be excluded
 
@@ -188,7 +187,7 @@ ugh registration data from the episode_of_care table a list of patients who are 
 
 ```
 
-## 2. Scheduled Procedures
+## 2. Register Stored Procedures
 We then have Stored procedures set up to create tables daily (latest view) and monthly (monthly and yearly views). Below see examples of the monthly procedure that runs for the monthly and yearly register views.
 
 ```sql 
@@ -287,7 +286,7 @@ END
 
 ```
 
-## 3. Scheduled Task
+## 3. Register Scheduled Task
 This is then scheduled as a task that runs on the 3rd day of every month to re-create these tables.
 ```sql
 CREATE OR REPLACE TASK DATA_LAB_SEL.FINAL.TASK_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES
@@ -1321,3 +1320,5 @@ FROM STAGING.PC_SEL_REGISTERED_PATIENTS_MONTHLY AS POP
 ```
 
 You can then use this view for any work related to Primary Care for easy links for patient LTC registers, as well as demographic information. You can join to various other datasets using SK_PATIENT_ID to do the same matching for datasets like Inpatients, Outpatients, Maternity etc.
+
+[def]: #3-register-scheduled-task
