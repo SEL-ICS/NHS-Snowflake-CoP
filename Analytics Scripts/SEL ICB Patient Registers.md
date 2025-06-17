@@ -1,13 +1,14 @@
-### SEL ICB Patient Registers
+# SEL ICB Patient Registers
 
-- [Intro](#intro)
-- [1. Building Patient Cohort](#1-building-patient-cohort)
-- [2. Scheduled Procedures](#2-scheduled-procedures)
-- [3. Scheduled Task](#3-scheduled-task)
-- [4. LTC Register Staging](#4-ltc-register-staging)
-- [5. LTC Register Function](#5-ltc-register-function)
-	- [5. LTC Scheduled tasks](#5-ltc-scheduled-tasks)
-	- [6. SEL Register \& LTC View](#6-sel-register--ltc-view)
+- [SEL ICB Patient Registers](#sel-icb-patient-registers)
+	- [Intro](#intro)
+	- [1. Building Patient Cohort](#1-building-patient-cohort)
+	- [2. Scheduled Procedures](#2-scheduled-procedures)
+	- [3. Scheduled Task](#3-scheduled-task)
+	- [4. LTC Register Staging](#4-ltc-register-staging)
+	- [5. LTC Register Function](#5-ltc-register-function)
+	- [6. LTC Scheduled tasks](#6-ltc-scheduled-tasks)
+	- [7. SEL Register \& LTC View](#7-sel-register--ltc-view)
 
 
 ## Intro 
@@ -1179,7 +1180,7 @@ END;
 
 ```
 
-### 5. LTC Scheduled tasks
+## 6. LTC Scheduled tasks
 Much like the SEL registers, these are then stages as tasks which follow AFTER the TASK_UPDATE_PC_SEL_REGISTERED_PATIENTS_TABLES task is complete.
 
 ```sql
@@ -1201,7 +1202,7 @@ CREATE OR REPLACE TASK DATA_LAB_SEL.FINAL.TASK_UPDATE_PC_LTC_REGISTER_TABLES
 	AS CALL DATA_LAB_SEL.STAGING.SP_UPDATE_PC_LTC_REGISTER_TABLES();
 
 ```
-### 6. SEL Register & LTC View
+## 7. SEL Register & LTC View
 
 The Final view that merges these in the latest, monthly and yearly views. The below view is for the monthly register but they are all built in the same way, with the exception of the latest view joining to the latest month view, regardless of what day it is updated in the month.
 
