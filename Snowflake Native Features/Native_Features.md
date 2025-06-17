@@ -29,6 +29,3 @@ SELECT
 FROM orders
 QUALIFY order_rank = 1;
 ```
----
-
-We hope these tips help you get the most out of Snowsight. If you have suggestions or additional tips, feel free to contribute or open a discussion!
