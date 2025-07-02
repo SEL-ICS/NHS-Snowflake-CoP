@@ -23,7 +23,7 @@ The NHS Snowflake Community of Practice currently includes the following organis
 
 | | |
 |--- | --- |
-|  <img src="https://www.selondonics.org/wp-content/themes/selondonics/images/ics-logo-blue.png" alt="South-East-London-ICS-logo" height="50"> | South East London Integrated Care System |
+|  <img src="https://www.selondonics.org/wp-content/themes/selondonics/images/ics-logo-white.png" alt="South-East-London-ICS-logo" height="50"> | South East London Integrated Care System |
 | <img src="https://nclhealthandcare.org.uk/wp-content/uploads/2024/05/ICSLogo.png" alt="North-Central-London-ICS-Logo" height=50> | North Central London Integrated Care System
 | <img src="https://northeastlondon.icb.nhs.uk/wp-content/uploads/2024/06/NEL-HCP-logo.png" alt="North-East-London-ICS-Logo" height=50> | North East London Integrated Care System |
 | <img src="https://www.nwlondonicb.nhs.uk/application/files/3716/1718/7844/NWL-ICS-logo-360x115.png" alt="North-West-London-ICS-Logo" height=50> | North West London Integrated Care System |
