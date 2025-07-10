@@ -19,7 +19,7 @@ We’re here to **collaborate**, **learn**, and **grow together**. This communit
 
 ## 🏢 Community
 
-The NHS Snowflake Community of Practice currently brings together the following organisations as founding members, but is hoping that others across London and beyond will continue to join and actively contribute this space.
+The NHS Snowflake Community of Practice currently brings together the following organisations as founding members, but is hoping that others across London and beyond will continue to join and actively contribute to this space.
 
 | | |
 |--- | --- |
