@@ -33,7 +33,7 @@ If you are using Information from several Information Providers and listing mult
 These are important conditions of this licence and if you fail to comply with them the rights granted to you under this licence, or any similar licence granted by the Licensor, will end automatically.
 
 Exemptions
-----------
+-----------
 
 This licence does not cover:
 
@@ -46,7 +46,7 @@ This licence does not cover:
 - identity documents such as the British Passport
 
 Non-endorsement
----------------
+----------------
 
 This licence does not grant you any right to use the Information in a way that suggests any official status or that the Information Provider and/or Licensor endorse you or your use of the Information.
 
@@ -78,7 +78,7 @@ In this licence, the terms below have the following meanings:
 'You', 'you' and 'your' means the natural or legal person, or body of persons corporate or incorporate, acquiring rights in the Information (whether the Information is obtained directly from the Licensor or otherwise) under this licence.
 
 About the Open Government Licence
----------------------------------
+-----------------------------------
 
 The National Archives has developed this licence as a tool to enable Information Providers in the public sector to license the use and re-use of their Information under a common open licence. The National Archives invites public sector bodies owning their own copyright and database rights to permit the use of their Information under this licence.
 
