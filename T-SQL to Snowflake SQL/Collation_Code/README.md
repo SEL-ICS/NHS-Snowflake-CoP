@@ -73,6 +73,11 @@ CALL CONTROL.create_collation_table(
     'SOURCE_ROLE',
     'en-ci'
 );
+```
+
+### Collate a Schema of Tables
+
+```sql
 
 CALL CONTROL.create_collation_tables(
     'MY_DATABASE',
@@ -80,8 +85,16 @@ CALL CONTROL.create_collation_tables(
     'SOURCE_ROLE',
     'en-ci'
 );
+```
+Replace each parameter accordingly where SOURCE_ROLE = 'COLLATION_ADMIN'
 
-Replace each parameter accordingly.
+The resulting collated and backup tables will appear as follows
+
+- Database "Test"
+ - Schema "Fin&Sales"
+   - THYROID_MONITORING
+   - THYROID_MONITORING_01082025_BACKUP
+
 
 Author
 Developed by Angela Ebirim
