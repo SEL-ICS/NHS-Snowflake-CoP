@@ -1,40 +1,101 @@
 # Snowflake Collation Project
 
-This project provides code to collate case sensitive text in Snowflake tables to case insensitive using the target collation of 'en-ci'.
+This project provides code to convert case-sensitive `TEXT`/`VARCHAR` columns in Snowflake tables to case-insensitive using the collation `'en-ci'`.
 
 ## Overview
 
-The code provides store procedures to:
-- Collate a single Snowflake table as long as it has TEXT/VARCHAR columns
-- Collate a schema of Snowflake tables as long as they have TEXT/VARCHAR columns
+The repository includes two Python-based stored procedures for use in Snowflake:
+
+- Collate a **single table** with `TEXT`/`VARCHAR` columns
+- Collate **an entire schema** of tables with `TEXT`/`VARCHAR` columns
 
 ## How It Works
 
-The collation store procedure(s) are written in Python and will transform the TEXT/VARCHAR data, in a Snowflake table, from case sensitive to case insensitive. A knowledge of Python however is not required to run the code.
+The stored procedures are written in Python using Snowflake Snowpark. They transform text-based columns to apply the `'en-ci'` collation, making string comparisons case-insensitive.
 
-The diagram of what happens when the collation code is run can be seen here:
+> **Note**: No Python knowledge is required to execute the procedures.
 
-[Collation Diagram](flowchart.png)
+A high-level process flow is shown in the diagram:  
+📎 [Collation Diagram](flowchart.png)
+
+---
 
 ## Prerequisites
 
-Snowflake account with ACCOUNTADMIN rights required to create new schemas and execute store procedures
+- A Snowflake account with **`ACCOUNTADMIN`** role privileges
+- Permission to create roles, schemas, warehouses, and stored procedures
+
+---
 
 ## Setup Instructions
 
-The setup.sql script will create the necessary Snowflake objects (roles, schemas, store procedures etc) necessary to run the collation code.
+The `setup.sql` script creates all required Snowflake objects.
 
-**Note**: Edit setup.sql and find/replace 'databasename'. with YOUR DATABASE NAME, 'schemaname'. with YOUR SCHEMA NAME e.g. USE SCHEMA "Test"."Fin&Sales" which means use the schema "Fin&Sales" on database "Test". Also replace 'SnowflakeUser' with the person that will be running the collation code <b>(please note that this person must have access to the role ACCOUNTADMIN)</b>
+### Configuration
 
-1. Execute the `setup.sql` script as `ACCOUNTADMIN`
+Before running `setup.sql`, replace the following placeholders:
 
-### Created Snowflake Objects On The Target Database
-- **Roles**: A new collation role named COLLATION_ADMIN
-- **Schemas**: A new schema on the target database named CONTROL
-- **Tables**: Control and Log tables created under the CONTROL schema
-- **Store Procedures**: Two stored procedures named create_collation_table and create_collation_tables created under the CONTROL schema
-- **Warehouse**: A new warehouse named COLLATION_WH assigned to the new role, COLLATION_ADMIN
-- **Grants**: Complete set of grants assigned to the COLLATION_ADMIN role
+- `'databasename'` → your target database
+- `'schemaname'` → your schema name  
+  _Example: `USE SCHEMA "Test"."Fin&Sales"`_
+- `'SnowflakeUser'` → the user who will execute the collation  
+  _**This user must have `ACCOUNTADMIN` access**_
+
+### Execution Steps
+
+1. Log into Snowflake as `ACCOUNTADMIN`
+2. Execute the `setup.sql` script in full
+
+---
+
+## Objects Created
+
+- **Role**: `COLLATION_ADMIN`
+- **Schema**: `CONTROL`
+- **Warehouse**: `COLLATION_WH`
+- **Stored Procedures**:
+  - `create_collation_table` — for single table collation
+  - `create_collation_tables` — for schema-wide collation
+- **Tables**: Control and logging tables in the `CONTROL` schema
+- **Grants**: All required privileges granted to the `COLLATION_ADMIN` role
+
+---
+
+## Usage
+
+### Collate a Single Table
+
+```sql
+CALL CONTROL.create_collation_table(
+    'MY_DATABASE',
+    'MY_SCHEMA',
+    'MY_TABLE',
+    'SOURCE_ROLE',
+    'en-ci'
+);
+
+CALL CONTROL.create_collation_tables(
+    'MY_DATABASE',
+    'MY_SCHEMA',
+    'SOURCE_ROLE',
+    'en-ci'
+);
+
+Replace each parameter accordingly.
+
+Author
+Developed by Angela Ebirim
+Senior Data Engineer, NHS North East London Integrated Care Board
+email: angela.ebirim4@nhs.net
+Date: August 2025
+
+License
+MIT License
+© 2025 Crown copyright
+NHS North East London Integrated Care Board
+
+This software is released under the MIT License.
+
 
 
 
