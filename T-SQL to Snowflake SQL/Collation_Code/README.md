@@ -86,14 +86,14 @@ CALL CONTROL.create_collation_tables(
     'en-ci'
 );
 ```
-Replace each parameter accordingly where SOURCE_ROLE = 'COLLATION_ADMIN'
+Replace each parameter accordingly with SOURCE_ROLE set to 'COLLATION_ADMIN'
 
 The resulting collated and backup tables will appear as follows
 
-- Database "Test"
- - Schema "Fin&Sales"
-   - THYROID_MONITORING
-   - THYROID_MONITORING_01082025_BACKUP
+-- Database "Test"
+ -- Schema "Fin&Sales"
+   -- THYROID_MONITORING
+   -- THYROID_MONITORING_01082025_BACKUP
 
 
 Author
