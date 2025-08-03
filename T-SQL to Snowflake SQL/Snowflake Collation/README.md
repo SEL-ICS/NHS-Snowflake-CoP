@@ -117,25 +117,17 @@ will create collated and backup versions of every applicable table in the schema
 ## Author
 
 Author
-
 Developed by Angela Ebirim
-
 Senior Data Engineer, NHS North East London Integrated Care Board
-
 email: angela.ebirim4@nhs.net
-
 Date: August 2025
 
 ## License
 
 License
-
 MIT License
-
 © 2025 Crown copyright
-
 NHS North East London Integrated Care Board
-
 This software is released under the MIT License
 
 
