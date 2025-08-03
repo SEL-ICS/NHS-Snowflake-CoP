@@ -94,7 +94,7 @@ CALL CONTROL.create_collation_tables(
    - THYROID_MONITORING
    - THYROID_MONITORING_01082025_BACKUP
 
-
+```
 Author
 Developed by Angela Ebirim
 Senior Data Engineer, NHS North East London Integrated Care Board
@@ -105,8 +105,8 @@ License
 MIT License
 © 2025 Crown copyright
 NHS North East London Integrated Care Board
-
-This software is released under the MIT License.
+This software is released under the MIT License
+```
 
 
 
