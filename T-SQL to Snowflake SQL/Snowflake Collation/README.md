@@ -114,6 +114,7 @@ CALL CONTROL.create_collation_tables(
 ```
 will create collated and backup versions of every applicable table in the schema
 
+### Author
 
 Author
 Developed by Angela Ebirim
