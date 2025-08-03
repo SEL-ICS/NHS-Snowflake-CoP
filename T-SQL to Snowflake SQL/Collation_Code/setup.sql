@@ -4,7 +4,6 @@ USE ACCOUNTADMIN;
 CREATE DATABASE IF NOT EXISTS <databasename>;
 CREATE SCHEMA IF NOT EXISTS <databasename>.<schemaname>;
 USE DATABASE <databasename>;
-
 USE SCHEMA <databasename>.<schemaname>;
 
 -- For existing databases
