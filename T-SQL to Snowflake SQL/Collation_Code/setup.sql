@@ -4,7 +4,6 @@ USE ACCOUNTADMIN;
 CREATE DATABASE IF NOT EXISTS <databasename>;
 CREATE SCHEMA IF NOT EXISTS <databasename>.<schemaname>;
 USE DATABASE <databasename>;
-
 USE SCHEMA <databasename>.<schemaname>;
 
 -- For existing databases
@@ -349,17 +348,25 @@ $$;
 
 CREATE OR REPLACE WAREHOUSE COLLATION_WH
   WAREHOUSE_SIZE = 'XSMALL'
-  AUTO_SUSPEND = 60 -- suspend after 60 seconds of inactivity
+  AUTO_SUSPEND = 60 
   AUTO_RESUME = TRUE
   INITIALLY_SUSPENDED = TRUE
   COMMENT = 'Warehouse for executing collation stored procedures';
 
 GRANT USAGE ON WAREHOUSE COLLATION_WH TO ROLE COLLATION_ADMIN;
 GRANT OPERATE ON WAREHOUSE COLLATION_WH TO ROLE COLLATION_ADMIN;
+
 GRANT EXECUTE ON PROCEDURE CONTROL.create_collation_table(VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR)
 TO ROLE COLLATION_ADMIN;
 GRANT EXECUTE ON PROCEDURE CONTROL.create_collation_tables(VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR)
 TO ROLE COLLATION_ADMIN;
+
+-- to prepare for execution of stored procedures
+-- use the following commands to set the role and warehouse:
+
+USE ROLE COLLATION_ADMIN;
+
+USE WAREHOUSE COLLATION_WH;
 
 
 
