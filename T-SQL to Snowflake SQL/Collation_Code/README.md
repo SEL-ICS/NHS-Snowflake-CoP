@@ -12,5 +12,5 @@ The collation store procedure(s) are written in Python and will transform the TE
 
 # Prerequisites
 
-- Snowflake account with ACCOUNTADMIN privileges required to create new schemas, grant priviledges and execute store procedures
+- Snowflake account with ACCOUNTADMIN privileges required to create new schemas, grant privileges and execute store procedures
 
