@@ -37,7 +37,7 @@ Before running `setup.sql`, replace the following placeholders:
 
 - `'databasename'` → your target database
 - `'schemaname'` → your schema name  
-  _Example: `USE SCHEMA "Test"."Fin&Sales"`_
+  _Example: `USE SCHEMA "Test"."Monitoring"`_
 - `'SnowflakeUser'` → the user who will execute the collation  
   _**This user must have `ACCOUNTADMIN` access**_
 
@@ -86,12 +86,11 @@ CALL CONTROL.create_collation_tables(
     'en-ci'
 );
 ```
-Replace each parameter accordingly with SOURCE_ROLE set to 'COLLATION_ADMIN'
 
-The resulting collated and backup tables will appear as follows
+`CALL CONTROL.create_collation_table('Test', 'Monitoring', 'COLLATION_ADMIN', 'en-ci')` will generate the following collated and backup tables:
 
 - Database "Test"
- - Schema "Fin&Sales"
+ - Schema "Monitoring"
    - THYROID_MONITORING
    - THYROID_MONITORING_01082025_BACKUP
 
