@@ -97,7 +97,7 @@ CALL CONTROL.create_collation_table(
 );
 ```
 
-will generate the following collated and backup tables:
+will create collated and backup versions of an applicable table:
 
 - Database "Test"
  - Schema "Monitoring"
@@ -114,15 +114,23 @@ CALL CONTROL.create_collation_tables(
 ```
 will create collated and backup versions of every applicable table in the schema
 
-### Author
+## Author
 
 Author
+
+
 Developed by Angela Ebirim
+
+
 Senior Data Engineer, NHS North East London Integrated Care Board
+
+
 email: angela.ebirim4@nhs.net
+
+
 Date: August 2025
 
-
+## License
 License
 MIT License
 © 2025 Crown copyright
