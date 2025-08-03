@@ -78,7 +78,6 @@ CALL CONTROL.create_collation_table(
 ### Collate a Schema of Tables
 
 ```sql
-
 CALL CONTROL.create_collation_tables(
     'MY_DATABASE',
     'MY_SCHEMA',
@@ -87,26 +86,28 @@ CALL CONTROL.create_collation_tables(
 );
 ```
 
-`CALL CONTROL.create_collation_table('Test', 'Monitoring', 'COLLATION_ADMIN', 'en-ci')` will generate the following collated and backup tables:
+`CALL CONTROL.create_collation_table('Test', 'Monitoring', 'THYROID_MONITORING', 'COLLATION_ADMIN', 'en-ci')` will generate the following collated and backup tables:
 
 - Database "Test"
  - Schema "Monitoring"
    - THYROID_MONITORING
    - THYROID_MONITORING_01082025_BACKUP
 
-```
+
 Author
 Developed by Angela Ebirim
 Senior Data Engineer, NHS North East London Integrated Care Board
 email: angela.ebirim4@nhs.net
 Date: August 2025
 
+
 License
 MIT License
 © 2025 Crown copyright
 NHS North East London Integrated Care Board
 This software is released under the MIT License
-```
+
+
 
 
 
