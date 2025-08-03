@@ -12,7 +12,7 @@ The code provides store procedures to:
 
 The collation store procedure(s) are written in Python and will transform the TEXT/VARCHAR data, in a Snowflake table, from case sensitive to case insensitive. A knowledge of Python however is not required to run the code.
 
-The diagram of what happens when the collation code is run:
+The diagram of what happens when the collation code is run can be seen here:
 
 [Collation Diagram](flowchart.png)
 
