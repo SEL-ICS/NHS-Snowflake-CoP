@@ -85,17 +85,36 @@ CALL CONTROL.create_collation_tables(
     'en-ci'
 );
 ```
+### Example
 
-`CALL CONTROL.create_collation_table('Test', 'Monitoring', 'THYROID_MONITORING', 'COLLATION_ADMIN', 'en-ci')` will generate the following collated and backup tables:
+```sql
+CALL CONTROL.create_collation_table(
+    'Test',
+    'Monitoring',
+    'THYROID_MONITORING',
+    'COLLATION_ADMIN',
+    'en-ci'
+);
+```
+
+will generate the following collated and backup tables:
 
 - Database "Test"
  - Schema "Monitoring"
    - THYROID_MONITORING
    - THYROID_MONITORING_01082025_BACKUP
 
-`CALL CONTROL.create_collation_tables('Test', 'Monitoring', 'COLLATION_ADMIN', 'en-ci')` will generate a schema of collated and backup tables
-
+```sql
+CALL CONTROL.create_collation_tables(
+    'Test',
+    'Monitoring',
+    'COLLATION_ADMIN',
+    'en-ci'
+);
 ```
+will create collated and backup versions of every applicable table in the schema
+
+
 Author
 Developed by Angela Ebirim
 Senior Data Engineer, NHS North East London Integrated Care Board
@@ -108,7 +127,7 @@ MIT License
 © 2025 Crown copyright
 NHS North East London Integrated Care Board
 This software is released under the MIT License
-```
+
 
 
 
