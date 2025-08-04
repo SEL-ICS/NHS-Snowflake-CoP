@@ -149,6 +149,9 @@ No. You should create a single `CONTROL` schema per database to house the stored
 #### Is there a rollback process ?
 Yes. If the validation fails, the rollback process begins where entries for the collated table are removed and the collated table and backups tables dropped so what's left is the original source table. The `CONTROL.COLLATION_LOG_TABLE` should also be checked to help with troubleshooting which aspect of the validation failed
 
+#### How do I see the grants assigned to the role COLLATION_ADMIN ?
+Execute the code `SHOW GRANTS TO ROLE COLLATION_ADMIN`and this will show you all the rights assigned to this role and the objects the rights apply to
+
 ## Author
 
 Developed by Angela Ebirim \
