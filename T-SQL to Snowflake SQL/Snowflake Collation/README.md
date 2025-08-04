@@ -48,7 +48,7 @@ Before running `setup.sql`, replace the following placeholders:
 
 ---
 
-## Objects Created
+## Snowflake Objects Created
 
 - **Role**: `COLLATION_ADMIN`
 - **Schema**: `CONTROL`
