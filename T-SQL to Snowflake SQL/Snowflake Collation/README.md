@@ -146,6 +146,9 @@ The results of these checks are logged in the `CONTROL.COLLATION_LOG_TABLE`. Onl
 #### Do I need to create the stored procedures and control tables in every schema ?
 No. You should create a single `CONTROL` schema per database to house the stored procedures, control table, and log table. As long as the `COLLATION_ADMIN` role has the necessary privileges on the target schemas, and the procedures are executed using this role, the collation process will work as expected. If in doubt refer to instructions found in `setup.sql`
 
+### Is there a rollback process ?
+Yes. If the validation fails, the rollback process begins where entries for the collated table are removed and the collated table and backups tables dropped so what's left is the original source table. The `CONTROL.COLLATION_LOG_TABLE` should also be checked to help with troubleshooting which aspect of the validation failed
+
 ## Author
 
 Developed by Angela Ebirim \
