@@ -54,8 +54,8 @@ Before running `setup.sql`, replace the following placeholders:
 - **Schema**: `CONTROL`
 - **Warehouse**: `COLLATION_WH`
 - **Stored Procedures**:
-  - `create_collation_table` — for single table collation
-  - `create_collation_tables` — for schema-wide collation
+  - `CREATE_COLLATION_TABLE` — for single table collation
+  - `CREATE_COLLATION_TABLES` — for schema-wide collation
 - **Tables**: Control and logging tables in the `CONTROL` schema
 - **Grants**: All required privileges granted to the `COLLATION_ADMIN` role
 
