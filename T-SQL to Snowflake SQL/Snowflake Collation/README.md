@@ -66,7 +66,7 @@ Before running `setup.sql`, replace the following placeholders:
 ### Collate a Single Table
 
 ```sql
-CALL CONTROL.create_collation_table(
+CALL CONTROL.CREATE_COLLATION_TABLE(
     'MY_DATABASE',
     'MY_SCHEMA',
     'MY_TABLE',
@@ -78,7 +78,7 @@ CALL CONTROL.create_collation_table(
 ### Collate a Schema of Tables
 
 ```sql
-CALL CONTROL.create_collation_tables(
+CALL CONTROL.CREATE_COLLATION_TABLES(
     'MY_DATABASE',
     'MY_SCHEMA',
     'SOURCE_ROLE',
@@ -88,7 +88,7 @@ CALL CONTROL.create_collation_tables(
 ### Example
 
 ```sql
-CALL CONTROL.create_collation_table(
+CALL CONTROL.CREATE_COLLATION_TABLE(
     'Test',
     'Monitoring',
     'THYROID_MONITORING',
@@ -105,7 +105,7 @@ will create collated and backup versions of an applicable table:
    - THYROID_MONITORING_01082025_BACKUP
 
 ```sql
-CALL CONTROL.create_collation_tables(
+CALL CONTROL.CREATE_COLLATION_TABLES(
     'Test',
     'Monitoring',
     'COLLATION_ADMIN',
@@ -113,6 +113,10 @@ CALL CONTROL.create_collation_tables(
 );
 ```
 will create collated and backup versions of every applicable table in the schema
+
+### Troubleshooting
+
+
 
 ## Author
 
@@ -128,7 +132,7 @@ MIT License \
 © 2025 Crown copyright \
 NHS North East London Integrated Care Board \
 
-This software is released under the MIT License
+This software is released under the Open Government V3 and MIT Licenses. All output subject to Crown Copyright.
 
 
 
