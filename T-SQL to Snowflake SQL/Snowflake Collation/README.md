@@ -122,7 +122,7 @@ No. The stored procedures are written in Python but can be run by users without 
 #### Will the collation process overwrite my original table?
 No. A backup is created first. The original table is only replaced **after validation**
 
-#### Can I collate all teables in a schema at one ?
+#### Can I collate all tables in a schema at one ?
 Yes. Use the `CREATE_COLLATION_TABLES` stored procedure to process all applicable tables in the schema
 
 #### What if a table has no `TEXT`/`VARCHAR` columns?
