@@ -114,9 +114,37 @@ CALL CONTROL.CREATE_COLLATION_TABLES(
 ```
 will create collated and backup versions of every applicable table in the schema
 
-### Troubleshooting
+### FAQ
 
+#### Do I need Python experience to run the code?
+No. The stored procedures are written in Python but can be run by users without Python knowledge
 
+#### Will the collation process overwrite my original table?
+No. A backup is created first. The original table is only replaced **after validation**
+
+#### Can I collate all teables in a schema at one ?
+Yes. Use the `CREATE_COLLATION_TABLES` stored procedure to process all applicable tables in the schema
+
+#### What if a table has no `TEXT`/`VARCHAR` columns?
+Only tables with applicable text columns are processed
+
+#### Will this code process views ?
+No. It only operates on tables. However, you can create a view on top of a collated table, and the view will inherit the underlying column collation.
+
+#### Where can I check to see if the table was actually collated?
+Refer to the `CONTROL.COLLATION_CONTROL_TABLE`, which tracks all collated tables. It includes the names of collated columns, the applied collation, and the timestamp of the operation. Additionally, a success/failure message is returned after execution.
+
+#### What does the CONTROL.COLLATION_LOG_TABLE do ?
+After a table is collated, it undergoes validation against the source table. This includes:
+
+- Comparing data integrity for the collated columns
+- Verifying column counts match
+- Ensuring row counts are identical
+
+The results of these checks are logged in the `CONTROL.COLLATION_LOG_TABLE`. Only if all validations pass is the collated table promoted to replace the original table. The original table is then dropped, and its grants are applied to the promoted table.
+
+#### Do I need to create the stored procedures and control tables in every schema ?
+No. You should create a single `CONTROL` schema per database to house the stored procedures, control table, and log table. As long as the `COLLATION_ADMIN` role has the necessary privileges on the target schemas, and the procedures are executed using this role, the collation process will work as expected. If in doubt refer to `setup.sql`
 
 ## Author
 
@@ -126,7 +154,6 @@ email: angela.ebirim4@nhs.net \
 Date: August 2025
 
 ## License
-
 
 MIT License \
 © 2025 Crown copyright \
