@@ -132,7 +132,7 @@ Only tables with applicable text columns are processed
 No. It only operates on tables. However, you can create a view on top of a collated table, and the view will inherit the underlying column collation.
 
 #### Where can I check to see if the table was actually collated?
-Refer to the `CONTROL.COLLATION_CONTROL_TABLE`, which tracks all collated tables. It includes the names of collated columns, the applied collation, and the timestamp of the operation. Additionally, a success/failure message is returned after execution.
+Refer to the `CONTROL.COLLATION_CONTROL_TABLE`, which tracks all collated tables. It includes the names of collated columns, the applied collation, and the timestamp of the operation. Additionally, a status value of success/not applicable to non-TEXT columns is recorded during collation.
 
 #### What does the CONTROL.COLLATION_LOG_TABLE do ?
 After a table is collated, it undergoes validation against the source table. This includes:
