@@ -144,7 +144,7 @@ After a table is collated, it undergoes validation against the source table. Thi
 The results of these checks are logged in the `CONTROL.COLLATION_LOG_TABLE`. Only if all validations pass is the collated table promoted to replace the original table. The original table is then dropped, and its grants are applied to the promoted table.
 
 #### Do I need to create the stored procedures and control tables in every schema ?
-No. You should create a single `CONTROL` schema per database to house the stored procedures, control table, and log table. As long as the `COLLATION_ADMIN` role has the necessary privileges on the target schemas, and the procedures are executed using this role, the collation process will work as expected. If in doubt refer to `setup.sql`
+No. You should create a single `CONTROL` schema per database to house the stored procedures, control table, and log table. As long as the `COLLATION_ADMIN` role has the necessary privileges on the target schemas, and the procedures are executed using this role, the collation process will work as expected. If in doubt refer to instructions found in `setup.sql`
 
 ## Author
 
