@@ -16,7 +16,7 @@ The stored procedures are written in Python using Snowflake Snowpark. They trans
 > **Note**: No Python knowledge is required to execute the procedures.
 
 A high-level process flow is shown in the diagram:  
-📎 [Collation Diagram](flowchart.png)
+![Collation Diagram](flowchart.png)
 
 ---
 
