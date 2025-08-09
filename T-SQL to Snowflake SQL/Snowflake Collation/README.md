@@ -177,7 +177,7 @@ Query `CONTROL.COLLATION_LOG_TABLE` for troubleshooting
 | 100,000,000   | 53         | 29        | 21          |
 | 1,000,000,000 | 378        | 114       | 61          |
 
-> **Note**: Performance varies based on warehouse load, clustering, and network factors
+> **Note**: Performance, measured in seconds, varies based on warehouse load and network factors
 ---
 
 ## Author
