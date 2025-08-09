@@ -159,7 +159,7 @@ Execute the code `SHOW GRANTS TO ROLE COLLATION_ADMIN`and this will show you all
 
 ### Performance Metrics
 
-These are performance times of how long it takes to collate tables, using the code, ranging from 1000 row count right up to 1 billion, for warehouses ranging from size XS to L
+These are performance times, in seconds, of how long it takes to collate tables, using the code, ranging from 1000 row count right up to 1 billion, for warehouses ranging from size XS to L
 
 | Row count     | COMPUTE_XS | COMPUTE_M | COMPUTE_LG  |
 |:-------------:|:----------:|:---------:|:-----------:|
