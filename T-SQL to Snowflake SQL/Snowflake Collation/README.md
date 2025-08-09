@@ -114,6 +114,8 @@ CALL CONTROL.CREATE_COLLATION_TABLES(
 ```
 will create collated and backup versions of every applicable table in the schema
 
+---
+
 ### FAQ
 
 #### Do I need Python experience to run the code?
