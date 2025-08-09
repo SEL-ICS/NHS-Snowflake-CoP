@@ -83,6 +83,22 @@ def create_collation_table(
   collation_py: str
 ) -> str:
 
+    """
+    Function creates a collation table for the specified table in the specified 
+    schema and database, applying the specified collation to text columns
+    and ensuring that the table is properly backed up and grants are applied
+    
+    Args:
+        session (Session): Snowflake session object
+        database_py (str): Name of the database
+        schema_name_py (str): Name of the schema
+        table_name_py (str): Name of the table to be collated
+        source_role_py (str): Role to be used for the source table
+        collation_py (str): Collation to be applied
+    Returns:
+        str: Message indicating the result of the collation process
+    """     
+
     pattern = f"[{re.escape(string.punctuation)}_]"
     last_updated = datetime.now().strftime('%d%m%Y')
     
@@ -303,6 +319,19 @@ def create_collation_tables(
   collation_py: str
 ) -> str:
 
+    """
+    Function creates collation tables for all tables in the specified schema and database,
+    applying the specified collation to text columns and ensuring that the tables are properly backed up and grants are applied.
+
+    Args:
+        session (Session): Snowflake session object
+        database_py (str): Name of the database
+        schema_name_py (str): Name of the schema
+        source_role_py (str): Role to be used for the source tables
+        collation_py (str): Collation to be applied
+    Returns:    
+        str: Message indicating the result of the collation process
+    """
     existing_collated = []
     to_be_collated = []
     try: 
