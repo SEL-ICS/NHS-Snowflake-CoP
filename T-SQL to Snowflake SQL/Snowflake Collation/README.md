@@ -98,12 +98,12 @@ CALL CONTROL.CREATE_COLLATION_TABLE(
 ```
 
 will create collated and backup versions of an applicable table:
-```
-- Database "Test"
- - Schema "Monitoring"
-   - THYROID_MONITORING
-   - THYROID_MONITORING_01082025_BACKUP
-```   
+
+Creates:
+
+   - THYROID_MONITORING (collated)
+   - THYROID_MONITORING_01082025_BACKUP (backup)
+  
 
 ```sql
 CALL CONTROL.CREATE_COLLATION_TABLES(
@@ -126,40 +126,46 @@ No. The stored procedures are written in Python but can be run by users without 
 No. A backup is created first. The original table is only replaced **after validation**
 
 #### Can I collate all tables in a schema at one ?
-Yes. Use the `CREATE_COLLATION_TABLES` stored procedure to process all applicable tables in the schema
+Yes. Use the `CREATE_COLLATION_TABLES` stored procedure
 
 #### What if a table has no `TEXT`/`VARCHAR` columns?
-Only tables with applicable text columns are processed
+Only applicable tables with text columns are processed
 
 #### Will this code process views ?
 No. It only operates on tables. However, you can create a view on top of a collated table, and the view will inherit the underlying column collation.
 
 #### Where can I check to see if the table was actually collated?
-Refer to the `CONTROL.COLLATION_CONTROL_TABLE`, which tracks all collated tables. It includes the names of collated columns, the applied collation, and the timestamp of the operation. Additionally, a status value of success/not applicable to non-TEXT columns is recorded during collation.
+Query `CONTROL.COLLATION_CONTROL_TABLE` - It records:
+- Names of collated columns
+- Applied collation
+- Timestamp
+- Status (`success` / `not applicable`)
 
 #### What does the CONTROL.COLLATION_LOG_TABLE do ?
-After a table is collated, it undergoes validation against the source table. This includes:
+It logs the results of validation checks after collation:
+- Data integrity for collated columns
+- Column counts
+- Row counts
 
-- Comparing data integrity for the collated columns
-- Verifying column counts match
-- Ensuring row counts are identical
-
-The results of these checks are logged in the `CONTROL.COLLATION_LOG_TABLE`. Only if all validations pass is the collated table promoted to replace the original table. The original table is then dropped, and its grants are applied to the promoted table.
+Only if all checks pass is the collated table promoted to replace the original.
 
 #### Do I need to create the stored procedures and control tables in every schema ?
-No. You should create a single `CONTROL` schema per database to house the stored procedures, control table, and log table. As long as the `COLLATION_ADMIN` role has the necessary privileges on the target schemas, and the procedures are executed using this role, the collation process will work as expected. If in doubt refer to instructions found in `setup.sql`
+No, one `CONTROL` schema per database is enough, provided `COLLATION_ADMIN` has privileges on the target schemas
 
 #### Is there a rollback process ?
-Yes. If the validation fails, the rollback process begins where entries for the collated table are removed and the collated table and backups tables dropped so what's left is the original source table. The `CONTROL.COLLATION_LOG_TABLE` should also be checked to help with troubleshooting which aspect of the validation failed
+Yes. If the validation fails:
+1. Entries for the collated table are removed
+2. Collated and backup tables are dropped
+3. The original table remains untouched 
+Query `CONTROL.COLLATION_LOG_TABLE` for troubleshooting
 
 #### How do I see the grants assigned to the role COLLATION_ADMIN ?
-Execute the code `SHOW GRANTS TO ROLE COLLATION_ADMIN`and this will show you all the rights assigned to this role and the objects the rights apply to
+`SHOW GRANTS TO ROLE COLLATION_ADMIN`
 
 ---
 
 ### Performance Metrics
 
-These are performance times, in seconds, of how long it takes to collate tables, using the code, ranging from 1000 row count right up to 1 billion, for warehouses ranging from size XS to L
 
 | Row count     | COMPUTE_XS | COMPUTE_M | COMPUTE_LG  |
 |:-------------:|:----------:|:---------:|:-----------:|
@@ -169,6 +175,8 @@ These are performance times, in seconds, of how long it takes to collate tables,
 | 10,000,000    | 24         | 19        | 25          |
 | 100,000,000   | 53         | 29        | 21          |
 | 1,000,000,000 | 378        | 114       | 61          |
+
+> **Note**: Performance varies based on warehouse load, clustering, and network factors
 ---
 
 ## Author
