@@ -16,7 +16,7 @@ The stored procedures are written in Python using Snowflake Snowpark. They trans
 > **Note**: No Python knowledge is required to execute the procedures.
 
 A high-level process flow is shown in the diagram:  
-![Collation Diagram](flowchart1.png)
+![Collation Diagram](flowchart2.png)
 
 ---
 
@@ -98,11 +98,12 @@ CALL CONTROL.CREATE_COLLATION_TABLE(
 ```
 
 will create collated and backup versions of an applicable table:
-
+```
 - Database "Test"
  - Schema "Monitoring"
    - THYROID_MONITORING
    - THYROID_MONITORING_01082025_BACKUP
+```   
 
 ```sql
 CALL CONTROL.CREATE_COLLATION_TABLES(
