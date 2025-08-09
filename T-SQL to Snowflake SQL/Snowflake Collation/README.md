@@ -154,6 +154,8 @@ Yes. If the validation fails, the rollback process begins where entries for the 
 #### How do I see the grants assigned to the role COLLATION_ADMIN ?
 Execute the code `SHOW GRANTS TO ROLE COLLATION_ADMIN`and this will show you all the rights assigned to this role and the objects the rights apply to
 
+---
+
 ## Author
 
 Developed by Angela Ebirim \
