@@ -95,6 +95,7 @@ def create_collation_table(
         table_name_py (str): Name of the table to be collated
         source_role_py (str): Role to be used for the source table
         collation_py (str): Collation to be applied
+        
     Returns:
         str: Message indicating the result of the collation process
     """     
@@ -329,6 +330,7 @@ def create_collation_tables(
         schema_name_py (str): Name of the schema
         source_role_py (str): Role to be used for the source tables
         collation_py (str): Collation to be applied
+
     Returns:    
         str: Message indicating the result of the collation process
     """
