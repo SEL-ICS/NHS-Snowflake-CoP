@@ -157,6 +157,7 @@ Yes. If the validation fails:
 1. Entries for the collated table are removed
 2. Collated and backup tables are dropped
 3. The original table remains untouched 
+
 Query `CONTROL.COLLATION_LOG_TABLE` for troubleshooting
 
 #### How do I see the grants assigned to the role COLLATION_ADMIN ?
