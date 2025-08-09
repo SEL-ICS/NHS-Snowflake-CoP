@@ -159,14 +159,18 @@ Execute the code `SHOW GRANTS TO ROLE COLLATION_ADMIN`and this will show you all
 
 ### Performance Metrics
 
-| Row count     | COMPUTE_XS (s) | COMPUTE_M (s) | COMPUTE_LG (s)  |
-|---------------|----------------|---------------|-----------------|
-| 1,000         | 12             | 18            | 14              |
-| 100,000       | 15             | 17            | 17              |
-| 1,000,000     | 19             | 19            | 20              |
-| 10,000,000    | 24             | 19            | 25              |
-| 100,000,000   | 53             | 29            | 21              |
-| 1,000,000,000 | 378            | 114           | 61              |
+These are performance times of how long it takes to collate tables ranging from 1000 row count right 
+
+|               | WAREHOUSE (execution time in seconds for collation process) |           |             |
+|:-------------:|:-----------------------------------------------------------:|:---------:|:-----------:|
+| Row count     | COMPUTE_XS                                                  | COMPUTE_M | COMPUTE_LG  |
+| 1,000         | 12                                                          | 18        | 14          |
+| 100,000       | 15                                                          | 17        | 17          |
+| 1,000,000     | 19                                                          | 19        | 20          |
+| 10,000,000    | 24                                                          | 19        | 25          |
+| 100,000,000   | 53                                                          | 29        | 21          |
+| 1,000,000,000 | 378                                                         | 114       | 61          |
+
 
 ---
 
