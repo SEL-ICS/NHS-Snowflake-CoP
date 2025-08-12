@@ -163,7 +163,7 @@ Query `CONTROL.COLLATION_LOG_TABLE` for troubleshooting
 #### How do I see the grants assigned to the role COLLATION_ADMIN ?
 `SHOW GRANTS TO ROLE COLLATION_ADMIN`;
 
-### What if an organisation needs to revert from `en-ci` to `en-cs`?
+#### What if an organisation wanted to reverse their collation from `en-ci` to `en-cs` on a collated table?
 Before any collation changes are applied, a full backup of the original source table is created, including all original grants. This backup retains its `en-cs` collation.
 
 To reverse the collation:
