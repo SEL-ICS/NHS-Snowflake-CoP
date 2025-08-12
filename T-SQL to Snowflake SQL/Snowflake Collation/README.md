@@ -178,7 +178,7 @@ This restores the original `en-cs` table with it's original grants intact
 
 ---
 
-### Performance Metrics
+### Collation Performance Metrics
 
 
 | Row count     | COMPUTE_XS | COMPUTE_M | COMPUTE_LG  |
@@ -190,7 +190,7 @@ This restores the original `en-cs` table with it's original grants intact
 | 100,000,000   | 53         | 29        | 21          |
 | 1,000,000,000 | 378        | 114       | 61          |
 
-> **Note**: Performance, measured in seconds, varies based on warehouse load and network factors
+> **Note**: Performance, measured in seconds, for collating a single tables. Varies based on warehouse load and network factors
 ---
 
 ## Author
