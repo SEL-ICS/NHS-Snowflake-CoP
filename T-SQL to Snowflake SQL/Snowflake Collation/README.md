@@ -172,6 +172,7 @@ To reverse the collation:
 2. Rename the backup (for example):
    `ALTER TABLE THYROID_MONITORING_01082025_BACKUP RENAME TO THYROID_MONITORING`;
 
+
 This restores the original `en-cs` table with it's original grants intact
 
 ---
