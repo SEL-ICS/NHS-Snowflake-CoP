@@ -161,7 +161,18 @@ Yes. If the validation fails:
 Query `CONTROL.COLLATION_LOG_TABLE` for troubleshooting
 
 #### How do I see the grants assigned to the role COLLATION_ADMIN ?
-`SHOW GRANTS TO ROLE COLLATION_ADMIN`
+`SHOW GRANTS TO ROLE COLLATION_ADMIN`;
+
+### What if an organisation needs to revert from `en-ci` to `en-cs`?
+Before any collation changes are applied, a full backup of the original source table is created, including all original grants. This backup retains its `en-cs` collation.
+
+To reverse the collation:
+
+1. Drop the newly collated table (Snowflake does not allow two objects in the same schema with the same name)
+2. Rename the backup:
+   `ALTER TABLE ORIGINALTABLENAME_DDMMYYYY_BACKUP RENAME TO ORIGINALTABLENAME`;
+
+This restores the original `en-cs` table with it's original grants intact
 
 ---
 
