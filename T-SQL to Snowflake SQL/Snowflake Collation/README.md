@@ -169,8 +169,9 @@ Before any collation changes are applied, a full backup of the original source t
 To reverse the collation:
 
 1. Drop the newly collated table (Snowflake does not allow two objects in the same schema with the same name)
-2. Rename the backup (for example):\n
-   `ALTER TABLE THYROID_MONITORING_01082025_BACKUP RENAME TO THYROID_MONITORING`;
+2. Rename the backup (for example):
+
+`ALTER TABLE THYROID_MONITORING_01082025_BACKUP RENAME TO THYROID_MONITORING`;
 
 
 This restores the original `en-cs` table with it's original grants intact
