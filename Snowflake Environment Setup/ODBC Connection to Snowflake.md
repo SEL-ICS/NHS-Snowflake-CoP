@@ -20,8 +20,8 @@ Once the ODBC driver has been installed by IT, you can find it by going to the S
 ![Snowflake Environment Setup](./Images/Sync_ODBC_Updates.png)
 
 If it's not there, try these steps to get the software installed:
-    1. Restart the laptop.
-    2. If still not there, try these steps:
+1. Restart the laptop.
+2. If still not there, try these steps:
 
 ![Snowflake Environment Setup](./Images/ODBC_Administrator1.png)
     
