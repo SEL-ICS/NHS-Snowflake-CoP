@@ -1,16 +1,23 @@
-# title
+# 🔌 ODBC Connection to Snowflake 
 
-2025-05-22: If you have Single Sign On (SSO) set up, updating reports/dashboards with data from Snowflake requires you to log into Snowsight via the browser first, to prevent authentication failures in PowerBI/Excel when multiple tables are refreshed.
-2025-06-10: The "analyst" role in Snowflake has now been updated from USER_GROUP_SEL_BI_ANALYSTS to
-SEL-USERGROUP-STAFF-SNOWFLAKE-BI-ANALYST
-Please log out and back in to reset this as your default role:
+Welcome to the **ODBC Connection** section of our repository!
 
-And remember to change this in your ODBC driver too:
+This section outlines how to create a connection between Snowflake and Power Bi & Excel to pull data directly into your platform of choice
 
+## 📐 What’s Included
+
+In this section, you’ll find:
+- How to set up a data source in ODBC Data Source Administrator 
+- The process of pulling data into Excel & Power BI
+- Tips & Tricks
+
+
+## 👷‍♂️ ODBC Data Source Administrator
 
 
 Once the ODBC driver has been installed by IT, you can find it by going to the Start Menu and then typing in ODBC, there is some configuration needed.
-    1. 
+
+![Snowflake Environment Setup](./Images/Sync ODBC Updates.png)
 
 If it's not there, try these steps to get the software installed:
     1. Restart the laptop.
@@ -65,3 +72,5 @@ Added by JR 31/10/2024
 Please note that once you have swapped your SQL script over to your snowflake one in PBI, you will find any transformations you have done in Power Query will be lost and need to be done again. To help you with this, you can either:
     1) Make note of all transformations done ahead of moving the script, so you can follow these easily
     2) Take a copy of the PBI report so you can compare the new and old reports to follow what you need to do in Power Query.
+
+## ☝️🤓 Tips and Tricks
