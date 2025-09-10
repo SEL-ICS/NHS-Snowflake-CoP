@@ -1,4 +1,4 @@
-
+# title
 
 2025-05-22: If you have Single Sign On (SSO) set up, updating reports/dashboards with data from Snowflake requires you to log into Snowsight via the browser first, to prevent authentication failures in PowerBI/Excel when multiple tables are refreshed.
 2025-06-10: The "analyst" role in Snowflake has now been updated from USER_GROUP_SEL_BI_ANALYSTS to
