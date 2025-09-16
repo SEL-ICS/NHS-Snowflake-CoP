@@ -56,7 +56,7 @@ You should expect a username/password prompt like this when setting up a ODBC co
 Note: if you have Single Sign-On (SSO), click on the 2nd option, Windows, on the left green panel below instead, and then Connect in the bottom right, to connect with the default windows credentials (which will automatically link with the Snowflake credentials as part of SSO, and give you a MFA prompt via your Microsoft Authenticator if it is the first time, and not the Cisco Duo App.)
 
 ### Instructions for Power BI:
-And then for Power BI, take care not to use the default Snowflake connector, instead search for "ODBC" and select the one with the blue icon as shown below: (the steps are then same as in Excel as shown in the example above)
+And then for Power BI, take care not to use the default Snowflake connector, instead search for "ODBC" and select the one with the blue icon. (the steps are then same as in Excel as shown in the example above)
 
 
 If you have a SQL statement for your report, you can expand on "Advanced options" to enter it there.
