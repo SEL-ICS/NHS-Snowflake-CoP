@@ -17,13 +17,7 @@ In this section, you’ll find:
 You can find the ODBC installer on Snowflake's website here: 
 https://www.snowflake.com/en/developers/downloads/odbc/
 
-Once the ODBC driver has been installed by IT, you can find it by going to the Start Menu and then typing in ODBC, there is some configuration needed.
-
-![Snowflake Environment Setup](./Images/Sync_ODBC_Updates.png)
-
-If it's not there, try these steps to get the software installed:
-1. Restart the laptop.
-2. If still not there, try these steps:
+Once the ODBC driver has been installed by IT, you can find it by going to the Start Menu and typing in ODBC, then click on **ODBC Data Source Administratior**, you should see the window below, and there is some configuration needed. (If you do not, confirm the installation with your IT, and try the [tip below to sync your laptop](#syncing-laptop-to-install-odbc-driver).)
 
 ![Snowflake Environment Setup](./Images/ODBC_Administrator1.png)
     
@@ -72,3 +66,12 @@ If you have a SQL statement for your report, you can expand on "Advanced options
 Please note that once you have swapped your SQL script over to your snowflake one in PBI, you will find any transformations you have done in Power Query will be lost and need to be done again. To help you with this, you can either:
 1) Make note of all transformations done ahead of moving the script, so you can follow these easily
 2) Take a copy of the PBI report so you can compare the new and old reports to follow what you need to do in Power Query.
+
+### Syncing laptop to install ODBC driver
+>[!NOTE]
+>If **ODBC Data Source Administratior** is not showing in Start Menu when you search for it, and IT has confirmed that they have pushed it to your laptop, you can try these steps to sync the device and get the software installed:
+>1. Restart the laptop.
+>2. If still not there, try these steps:
+>3. 
+>![Snowflake Environment Setup](./Images/Sync_ODBC_Updates.png)
+
