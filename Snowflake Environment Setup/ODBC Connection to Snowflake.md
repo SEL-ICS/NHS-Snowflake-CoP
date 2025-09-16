@@ -43,23 +43,20 @@ Please note, when using using Single Sign On, you do not need to include a passw
 ### Instructions for Excel:
 
 ![Snowflake Environment Setup](./Images/ODBC_Excel.png)
-![Snowflake Environment Setup](./Images/ODBC_Excel2.png)
 
 If you need to enter a specific query instead of selecting a table/view, you can expand on "Advanced options" on this screen to open up a text box for your SQL statement:
+
+![Snowflake Environment Setup](./Images/ODBC_Excel2.png)
 
 (If you need any further details, this guide by Interworks might help:
 https://interworks.com/blog/hcalder/2019/01/30/query-snowflake-with-excel/)
 
+You should expect a username/password prompt when setting up a ODBC connection in Excel/PBI, as you are expected to supply credentials and approve the MFA prompt to connect to Snowflake. 
 
-You should expect a username/password prompt like this when setting up a ODBC connection in Excel/PBI, as you are expected to supply credentials and approve the MFA prompt to connect to Snowflake. 
-
-Note: if you have Single Sign-On (SSO), click on the 2nd option, Windows, on the left green panel below instead, and then Connect in the bottom right, to connect with the default windows credentials (which will automatically link with the Snowflake credentials as part of SSO, and give you a MFA prompt via your Microsoft Authenticator if it is the first time, and not the Cisco Duo App.)
+Note: if you have Single Sign-On (SSO), click on the 2nd option, Windows, on the left green panel in the prompt, and then hit Connect in the bottom right of the prompt, to connect with the default windows credentials (which will automatically link with the Snowflake credentials as part of SSO, and give you a MFA prompt via your Microsoft Authenticator)
 
 ### Instructions for Power BI:
-And then for Power BI, take care not to use the default Snowflake connector, instead search for "ODBC" and select the one with the blue icon. (the steps are then same as in Excel as shown in the example above)
-
-
-If you have a SQL statement for your report, you can expand on "Advanced options" to enter it there.
+And then for Power BI, again take care not to use the default Snowflake connector, instead search for "ODBC" and select the one with the blue icon. (the steps are then same as in Excel as shown above.)
 
 ## ☝️🤓 Tips and Tricks
 ### Power Query Disruption
