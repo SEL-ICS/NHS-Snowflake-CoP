@@ -14,6 +14,8 @@ In this section, you’ll find:
 
 ## 👷‍♂️ ODBC Data Source Administrator
 
+You can find the ODBC installer on Snowflake's website here: 
+https://www.snowflake.com/en/developers/downloads/odbc/
 
 Once the ODBC driver has been installed by IT, you can find it by going to the Start Menu and then typing in ODBC, there is some configuration needed.
 
