@@ -13,17 +13,18 @@ Next step
 
 
 # Quick Start
-|:warning:  Read ALL of these notes BEFORE you do anything|
-|-|
+> [!CAUTION]
+> **Read ALL of these notes BEFORE you start your training**
+
 
 ### Website addresses
-- community.snowflake.com
+- https://community.snowflake.com
 Create a Snowflake Community account here (if you haven't already). Make sure to use your nhs.net email.
-- training.snowflake.com
+- https://training.snowflake.com
 Use your Snowflake Community account to login here.
-- app.snowflake.com
+- https://app.snowflake.com
 "Snowsight" is the Snowflake web interface. Badge 1 will talk you through this after you've setup a free Snowflake trial account so don't worry about it yet.
-- ysa.snowflakeuniversity.com
+- https://ysa.snowflakeuniversity.com
 "You're Snow Amazing!" is the Snowflake Workshop Badge Management app. You will need
 your UNI ID and Secret UUID to access this. You will also need your Account Identifier and
 Account Locator to link your badges. Badge 1 will talk you through this so don't worry about it yet.
