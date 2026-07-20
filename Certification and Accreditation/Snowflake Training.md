@@ -1,21 +1,12 @@
 ![Snowflake logo](./Images/snowflake_logo.png)
-# Snowflake Training
-
-*This document is a cleaned Markdown conversion of the original training handout.*
-
-## Page 1
+# ❄ Snowﬂake Training
 
 This is the standard training process that everyone should follow to get started with Snowflake.
-Quickstart
-Troubleshooting
-Next step
-❄Snowﬂake Training
 
-
-# Quick Start
 > [!CAUTION]
 > **Read ALL of these notes BEFORE you start your training**
 
+## Quick Start
 
 ### Website addresses
 - https://community.snowflake.com
